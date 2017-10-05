@@ -9,7 +9,7 @@ fi
 
 cd /etc/easyrsa/
 
-./easyrsa import-req /svr_pki/$COMMON_NAME.req $COMMON_NAME
+./easyrsa import-req /svr_pki/reqs/$COMMON_NAME.req $COMMON_NAME
 ./easyrsa sign-req server $COMMON_NAME
 
 cp /etc/easyrsa/pki/ca.crt /svr_pki/ca.crt
