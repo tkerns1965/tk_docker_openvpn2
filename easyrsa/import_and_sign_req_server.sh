@@ -10,7 +10,7 @@ fi
 cd /etc/easyrsa/
 
 ./easyrsa import-req /svr_pki/reqs/$COMMON_NAME.req $COMMON_NAME
-./easyrsa sign-req server $COMMON_NAME
+echo "yes" | bash ./easyrsa sign-req server $COMMON_NAME
 
 cp /etc/easyrsa/pki/ca.crt /svr_pki/ca.crt
 cp /etc/easyrsa/pki/dh.pem /svr_pki/dh.pem
