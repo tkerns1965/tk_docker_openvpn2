@@ -1,0 +1,5 @@
+docker rmi img_tkdovpn2_client
+docker rmi img_tkdovpn2_server
+docker rmi img_tkdovpn2_openvpn_base
+docker rmi img_tkdovpn2_easyrsa
+docker rmi img_tkdovpn2_easyrsa_base
