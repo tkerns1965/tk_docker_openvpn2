@@ -12,4 +12,4 @@ cd ../client/
 docker build -t img_tkdovpn2_client .
 cd ../
 
-# docker network create net_tkdovpn2_bridge
+docker network create net_tkdovpn2_bridge
