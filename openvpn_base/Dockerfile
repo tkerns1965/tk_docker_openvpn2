@@ -5,3 +5,4 @@ RUN wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg | apt-key add -
                 > /etc/apt/sources.list.d/openvpn.list \
         && apt update \
         && apt install -y openvpn
+        && ln -s /etc/easyrsa/ /etc/openvpn/
