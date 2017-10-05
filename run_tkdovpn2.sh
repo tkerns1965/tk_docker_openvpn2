@@ -10,4 +10,4 @@ docker run -d --name openvpn_clt1 --network net_tkdovpn2_bridge \
   --mount src=vol_tkdovpn2_clt_pki,dst=/etc/easyrsa/pki \
   --cap-add=NET_ADMIN --device=/dev/net/tun \
   --entrypoint openvpn \
-  img_tkdovpn1_client /etc/openvpn/client.conf
+  img_tkdovpn2_client /etc/openvpn/client.conf
