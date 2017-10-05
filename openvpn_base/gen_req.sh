@@ -9,4 +9,4 @@ fi
 
 cd /etc/easyrsa/
 
-echo "" | ./easyrsa gen-req $COMMON_NAME
+echo "" | ./easyrsa gen-req $COMMON_NAME nopass
