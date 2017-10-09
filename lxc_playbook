@@ -9,9 +9,10 @@ lxc start cnt-easyrsa-base
 lxc exec cnt-easyrsa-base -- wget https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.3/EasyRSA-3.0.3.tgz
 lxc exec cnt-easyrsa-base -- tar zxvfP EasyRSA-3.0.3.tgz --transform 's!^EasyRSA-3.0.3!/etc/easyrsa!'
 lxc exec cnt-easyrsa-base -- chown -R 0:0 /etc/easyrsa/
-lxc exec cnt-easyrsa-base -- /etc/easyrsa/easyrsa init-pki
+lxc exec cnt-easyrsa-base -- bash -c "cd /etc/easyrsa/ && ./easyrsa init-pki"
 lxc restart cnt-easyrsa-base
 lxc stop cnt-easyrsa-base
 lxc copy cnt-easyrsa-base cnt-easyrsa
 lxc start cnt-easyrsa
-lxc exec cnt-easyrsa -- echo "easyrsa_ca" | /etc/easyrsa/easyrsa build-ca nopass
+lxc exec cnt-easyrsa -- bash -c "cd /etc/easyrsa/ && echo 'easyrsa_ca' | ./easyrsa build-ca nopass"
+lxc exec cnt-easyrsa -- bash -c "cd /etc/easyrsa/ && ./easyrsa gen-dh"
